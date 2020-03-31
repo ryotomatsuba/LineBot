@@ -60,8 +60,9 @@ def uploads_file():
             # ファイルの保存
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             # アップロード後の処理
-            with open('pickle_file/SomeOne.binaryfile','wb') as f:
-                pickle.dump(LineFriend(os.path.join(app.config['UPLOAD_FOLDER'], filename)),f)
+            with open('pickle_file/%s.binaryfile'%filename,'wb') as f:
+                friend=LineFriend(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                pickle.dump(friend,f)
             return render_template('result.html')
 
     elif request.method == 'GET':        
