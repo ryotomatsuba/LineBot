@@ -63,7 +63,7 @@ def uploads_file():
             with open('pickle_file/%s.binaryfile'%filename,'wb') as f:
                 friend=LineFriend(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 pickle.dump(friend,f)
-             print(friend.name)
+            print(friend.name)
             return render_template('result.html')
 
     elif request.method == 'GET':        
