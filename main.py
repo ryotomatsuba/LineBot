@@ -51,10 +51,10 @@ def callback():
 def handle_message(event):
     sentence = friend.make_sentence(reply_to=event.message.text,replier=friend.name)
     print(type(friend))
-	line_bot_api.reply_message(
+    line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=sentence)
-     )
+    )
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
