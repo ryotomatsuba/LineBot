@@ -90,6 +90,6 @@ class LineFriend:
             sentence += next_word
             queue.append(next_word)
             if next_word == "\n":
-                return sentence
+                return sentence.strip().strip('[Begin]')
 
 
