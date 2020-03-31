@@ -14,12 +14,13 @@ import os
 from LineFriend import LineFriend
 import pickle
 
-with open('pickle_file/Takahasi.binaryfile', 'rb') as f:
-    friend = pickle.load(f)
+
 # 軽量なウェブアプリケーションフレームワーク:Flask
 app = Flask(__name__)
 
-
+#friendにLineFriendインスタンス代入
+with open('pickle_file/Takahasi.binaryfile', 'rb') as f:
+    friend = pickle.load(f)
 #環境変数からLINE Access Tokenを設定
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 #環境変数からLINE Channel Secretを設定
@@ -57,3 +58,4 @@ def handle_message(event):
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+

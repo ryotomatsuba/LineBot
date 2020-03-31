@@ -1,9 +1,9 @@
 from LineFriend import LineFriend
-import sys
-file_pass=sys.argv[1]
 
-friend=LineFriend(file_pass)
+import pickle
 
+with open('pickle_file/Takahasi.binaryfile', 'rb') as f:
+    friend = pickle.load(f)
 while True:
     message=input('メッセージを入力: ')
     if message=="終わり":
