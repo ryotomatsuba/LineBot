@@ -21,7 +21,7 @@ class LineFriend:
         return sentences
     def name_talking_with(self):
         names=set([remark[1] for remark in self.remarks if remark[1]!=self.name])
-        names.remove('')
+        names.discard('')
         if len(names)>1:
             print("あなたは　：",names)
         else:
