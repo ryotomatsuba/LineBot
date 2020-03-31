@@ -11,7 +11,11 @@ from linebot.models import (
     FollowEvent, MessageEvent, TextMessage, TextSendMessage, ImageMessage, ImageSendMessage, TemplateSendMessage, ButtonsTemplate, PostbackTemplateAction, MessageTemplateAction, URITemplateAction
 )
 import os
+from LineFriend import LineFriend
+import pickle
 
+with open('pickle_file/Takahasi.binaryfile', 'rb') as f:
+    friend = pickle.load(f)
 # 軽量なウェブアプリケーションフレームワーク:Flask
 app = Flask(__name__)
 
@@ -44,9 +48,10 @@ def callback():
 # MessageEvent
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    sentence = friend.make_sentence(reply_to=event.message.text,replier=friend.name)
 	line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text='「' + event.message.text + '」って何？')
+        TextSendMessage(text=sentence)
      )
 
 if __name__ == "__main__":
