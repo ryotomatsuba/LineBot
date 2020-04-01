@@ -10,4 +10,4 @@ def save_LineFriend(file_pass):
 
 if __name__ == "__main__":
     #save_LineFriend('uploads/[LINE] 髙橋陵太とのトーク.txt')
-    save_LineFriend('uploads/[LINE] YUKI HIROTAとのトーク.txt')
+    save_LineFriend('uploads/[LINE] 松葉 亮人とのトーク.txt')

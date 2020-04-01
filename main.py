@@ -94,7 +94,7 @@ def callback():
 # MessageEvent
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    sentence = friend.make_sentence(reply_to=event.message.text,replier=friend.talking_with)
+    sentence = friend.make_sentence(reply_to=event.message.text)
     print(friend.name)
     line_bot_api.reply_message(
         event.reply_token,
