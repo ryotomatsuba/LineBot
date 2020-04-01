@@ -22,7 +22,7 @@ UPLOAD_FOLDER =join(dirname(realpath(__file__)), './uploads')
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #friendにLineFriendインスタンス代入
-with open('pickle_file/Takahasi.binaryfile', 'rb') as f:
+with open('pickle_file/yoru.binaryfile', 'rb') as f:
     friend = pickle.load(f)
 #環境変数からLINE Access Tokenを設定
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]

@@ -19,7 +19,7 @@ class LineFriend:
     def remarks2ones_sentences(self,person_name):
         sentences=[remark[2] for remark in self.remarks if remark[1]==person_name]
         return sentences
-    def name_talking_with(self):
+    def name_talking_with(self):#トークファイルの会話相手の名前を取得
         names=set([remark[1] for remark in self.remarks if remark[1]!=self.name])
         names.discard('')
         if len(names)>1:
