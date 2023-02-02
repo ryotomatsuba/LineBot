@@ -1,4 +1,4 @@
 Flask==1.0.0
 line-bot-sdk==1.8.0
 mecab-python3==0.996.2
-Werkzeug==0.14.1
+Werkzeug==0.15.5
